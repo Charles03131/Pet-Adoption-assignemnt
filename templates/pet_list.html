@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<title>{% block title %} Pet List {% endblock %}</title>
+
+{% block content %}
+
+<div class="grid-container">
+  {% for pet in pets %}
+
+  <h1><a href="{{pet.id}}">{{pet.name}}</a></h1>
+  <h3>{{pet.species}}</h3>
+  <img src="{{pet.photo_url}}" class="img-circle" alt="generic" />
+
+  <h3>Is available:{{pet.available}}</h3>
+
+  <a href="/{{pet.id}}/delete"
+    ><button class="btn btn-danger">Delete</button></a
+  >
+
+  {% endfor %}
+
+  <br />
+  <br />
+
+  <div>
+    <a href="/add"><button class="btn btn-success">Add Pet</button></a>
+    <div>{% endblock %}</div>
+  </div>
+</div>
