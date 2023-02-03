@@ -86,6 +86,5 @@ def delete_pet(pet_id):
     return redirect("/")
 
   
-#this last route to delete a pet was not required.It does not work yet.
 
 
