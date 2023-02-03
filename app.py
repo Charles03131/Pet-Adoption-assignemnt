@@ -75,9 +75,8 @@ def pet_details_and_edit(pet_id):
         """show pet details/edit form"""
         flash("please try again")
         return render_template("pet_details_and_editform.html",form=form,pet=pet)
-
-
-@app.route("/<int:pet_id>/delete", methods=["POST"])
+    
+@app.route("/<int:pet_id>/delete", methods=["GET","POST"])
 def delete_pet(pet_id):
     """delete pet"""
     pet=Pet.query.get_or_404(pet_id)
